@@ -7,6 +7,19 @@ This codebase is ROS native and will require a ROS installation. It can be used 
 
     - ROS Noetic
     - Python3
+    
+Dependencies:
+```
+    sudo pip install catkin_tools scipy open3d
+    sudo apt-get install ros-noetic-pybind11-catkin
+```
+```
+    sudo apt-get -y install python3-dev python3-pip
+    sudo pip install  mavproxy pymavlink cv2
+    
+    # install ROS dependencies
+    sudo apt-get install ros-noeetic-joy ros-noetic-cv-bridge ros-noetic-nav-core ros-noetic-cv-bridge ros-noetic-tf2-geometry-msgs
+```
 
 Presently, this codebase uses our sonar image system in Argonaut
 ```
@@ -19,13 +32,17 @@ If recontruction from multiple poses is desired, an odometry source is requiered
 
 # Set Up
 ```
-    mkdir -p catkin_ws
-    cd catkin_ws
+    mkdir -p catkin_ws/src
+    cd catkin_ws/src
+    git clone https://github.com/ethz-asl/libpointmatcher.git
+    git clone https://github.com/ethz-asl/libnabo.git  
     git clone https://github.com/jake3991/Argonaut.git
     git clone https://github.com/jake3991/sonar-SLAM.git
     git clone https://github.com/ivanacollg/sonar_camera_reconstruction.git
+    cd ..
+    catkin build
+    source devel/setup.bash
 ```
-Follow instruction for Argonaut setup as well. 
 
 # Running Code
 ```
