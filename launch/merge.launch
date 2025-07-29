@@ -15,7 +15,7 @@
     <include file="$(find bruce_slam)/launch/slam.launch">
     </include>
 
-    <include file="$(find sonar-camera-reconstruction)/launch/merge_node.launch">
+    <include file="$(find sonar_camera_reconstruction)/launch/merge_node.launch">
     </include>
 
 </launch>

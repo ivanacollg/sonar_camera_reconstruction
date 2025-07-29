@@ -7,7 +7,7 @@
     <arg name="merge_cloud_topic" default="/sonar_camera_reconstruction/cloud"/>
     <arg name="feature_image_topic" default="/sonar_camera_reconstruction/feature_img/compressed"/>
 
-    <node pkg="sonar-camera-reconstruction" name="merge_node" type="merge_node.py" output="screen">
+    <node pkg="sonar_camera_reconstruction" name="merge_node" type="merge_node.py" output="screen">
         <param name="publish_rate" type="int" value="5"/>
 
         <param name="sonar_sub" type="str" value="$(arg sonar_topic)"/>
@@ -17,8 +17,8 @@
         <param name="merge_cloud_pub" type="str" value="$(arg merge_cloud_topic)"/>
         <param name="feature_image_pub" type="str" value="$(arg feature_image_topic)"/>
 
-        <rosparam file="$(find sonar-camera-reconstruction)/config/monocular_camera_params.yaml"/>
-        <rosparam file="$(find sonar-camera-reconstruction)/config/sonar_params.yaml"/>
-        <rosparam file="$(find sonar-camera-reconstruction)/config/merge_params.yaml"/>
+        <rosparam file="$(find sonar_camera_reconstruction)/config/monocular_camera_params.yaml"/>
+        <rosparam file="$(find sonar_camera_reconstruction)/config/sonar_params.yaml"/>
+        <rosparam file="$(find sonar_camera_reconstruction)/config/merge_params.yaml"/>
     </node>
 </launch>
