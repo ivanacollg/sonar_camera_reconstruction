@@ -60,8 +60,9 @@ Parameters:
 - Merge parameters
 
 # Sample data
-Download sample data:
-https://drive.google.com/file/d/1IXFs3ATa16V4y8qqJ_ss_8yxvXu2n6vx/view?usp=drive_link
+Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
+
+
 
 # Citations
 If you use this repo please cite the following work. 
