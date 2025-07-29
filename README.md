@@ -40,6 +40,10 @@ Presently, this codebase uses our sonar image system in Argonaut `https://github
 ```
     roslaunch sonar_camera_reconstruction merge.launch
 ```
+Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
+```
+    rosbag play sample.bag --clock
+```
 
 # Use Guide
 Input Topics:
@@ -56,9 +60,6 @@ Parameters:
 - Monocular Camera parameters
 - Sonar parameters
 - Merge parameters
-
-# Sample data
-Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
 
 
 
