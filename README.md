@@ -10,7 +10,7 @@ This codebase is ROS native and will require a ROS installation. It can be used 
     
 Dependencies:
 ```
-    sudo pip install catkin_tools scipy open3d
+    sudo pip install catkin_tools scipy open3d gtsam
     sudo apt-get install ros-noetic-pybind11-catkin
 ```
 ```
@@ -18,13 +18,10 @@ Dependencies:
     sudo pip install  mavproxy pymavlink cv2
     
     # install ROS dependencies
-    sudo apt-get install ros-noeetic-joy ros-noetic-cv-bridge ros-noetic-nav-core ros-noetic-cv-bridge ros-noetic-tf2-geometry-msgs
+    sudo apt-get install ros-noetic-joy ros-noetic-cv-bridge ros-noetic-nav-core ros-noetic-cv-bridge ros-noetic-tf2-geometry-msgs
 ```
 
-Presently, this codebase uses our sonar image system in Argonaut
-```
-    git clone https://github.com/jake3991/Argonaut.git
-```
+Presently, this codebase uses our sonar image system in Argonaut `https://github.com/jake3991/Argonaut.git`.
 
 # Set Up
 ```
@@ -61,8 +58,9 @@ Parameters:
 - Merge parameters
 
 # Sample data
-Download sample data:
-https://drive.google.com/file/d/1IXFs3ATa16V4y8qqJ_ss_8yxvXu2n6vx/view?usp=drive_link
+Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
+
+
 
 # Citations
 If you use this repo please cite the following work. 
