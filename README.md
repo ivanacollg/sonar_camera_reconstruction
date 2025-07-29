@@ -10,7 +10,7 @@ This codebase is ROS native and will require a ROS installation. It can be used 
     
 Dependencies:
 ```
-    sudo pip install catkin_tools scipy open3d
+    sudo pip install catkin_tools scipy open3d gtsam
     sudo apt-get install ros-noetic-pybind11-catkin
 ```
 ```
@@ -18,17 +18,11 @@ Dependencies:
     sudo pip install  mavproxy pymavlink cv2
     
     # install ROS dependencies
-    sudo apt-get install ros-noeetic-joy ros-noetic-cv-bridge ros-noetic-nav-core ros-noetic-cv-bridge ros-noetic-tf2-geometry-msgs
+    sudo apt-get install ros-noetic-joy ros-noetic-cv-bridge ros-noetic-nav-core ros-noetic-cv-bridge ros-noetic-tf2-geometry-msgs
 ```
 
-Presently, this codebase uses our sonar image system in Argonaut
-```
-    git clone https://github.com/jake3991/Argonaut.git
-```
-If recontruction from multiple poses is desired, an odometry source is requiered, we use our sonar-SLAM framework for this:
-```
-    git clone https://github.com/jake3991/sonar-SLAM.git
-```
+Presently, this codebase uses our sonar image system in Argonaut`https://github.com/jake3991/Argonaut.git`.
+If recontruction from multiple poses is desired, an odometry source is requiered, we use our sonar-SLAM framework for this:`https://github.com/jake3991/sonar-SLAM.git`.
 
 # Set Up
 ```
