@@ -1,0 +1,32 @@
+image_width: 1920
+image_height: 1080
+camera_name: narrow_stereo
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1048.9128 ,    0.     ,  938.53824,
+            0.     , 1044.4716 ,  495.39543,
+            0.     ,    0.     ,    1.     ]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.028647, 0.001474, -0.007251, -0.003957, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1025.0364 ,    0.     ,  925.73027,    0.     ,
+            0.     , 1034.43093,  488.16203,    0.     ,
+            0.     ,    0.     ,    1.     ,    0.     ]
+
+# Transformation Matrix Sonar to Camera
+Ts_c:  [0.0,   -1.0,  0.0,  0.0,
+        0.0,    0.0, -1.0,  0.0,
+        1.0,    0.0,  0.0,  0.15,
+        0.0,    0.0,  0.0,  1.0 ]
