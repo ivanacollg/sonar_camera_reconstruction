@@ -46,7 +46,7 @@ If recontruction from multiple poses is desired, an odometry source is requiered
 
 # Running Code
 ```
-    roslaunch sonar_camera_merge merge.launch
+    roslaunch sonar_camera_reconstruction merge.launch
 ```
 
 # Use Guide
