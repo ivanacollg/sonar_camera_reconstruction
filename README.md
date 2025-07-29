@@ -25,10 +25,6 @@ Presently, this codebase uses our sonar image system in Argonaut
 ```
     git clone https://github.com/jake3991/Argonaut.git
 ```
-If recontruction from multiple poses is desired, an odometry source is requiered, we use our sonar-SLAM framework for this:
-```
-    git clone https://github.com/jake3991/sonar-SLAM.git
-```
 
 # Set Up
 ```
@@ -37,7 +33,6 @@ If recontruction from multiple poses is desired, an odometry source is requiered
     git clone https://github.com/ethz-asl/libpointmatcher.git
     git clone https://github.com/ethz-asl/libnabo.git  
     git clone https://github.com/jake3991/Argonaut.git
-    git clone https://github.com/jake3991/sonar-SLAM.git
     git clone https://github.com/ivanacollg/sonar_camera_reconstruction.git
     cd ..
     catkin build
