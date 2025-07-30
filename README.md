@@ -69,7 +69,7 @@ If you use this repo please cite the following work.
 @inproceedings{
     title={Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments},
     author={Ivana Collado-Gonzalez, John McConnell, Paul Szenher, and Brendan Englot},
-    booktitle={},
+    booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
     year={2025},
     organization={}
 }
