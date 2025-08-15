@@ -32,7 +32,8 @@ sudo apt-get install tf-transformations ros-jazzy-compressed-image-transport
     cd ros2_ws/src
     git clone https://github.com/ethz-asl/libpointmatcher.git
     git clone https://github.com/ethz-asl/libnabo.git  
-    git clone 
+    git clone https://github.com/ivanacollg/sonar_camera_reconstruction.git
+    git checkout ROS2
     cd ..
     colcon build
     source install/setup.bash
@@ -42,7 +43,7 @@ sudo apt-get install tf-transformations ros-jazzy-compressed-image-transport
 ```
     ros2 launch sonar_camera_reconstruction_pkg merge_launch.py
 ```
-Download [sample data](https://drive.google.com/file/d/1LTlj1UInd_kHo8jo5oPZV9TNBJeVsJtx/view?usp=drive_link)
+Download [ROS 2 sample data](https://drive.google.com/file/d/1LTlj1UInd_kHo8jo5oPZV9TNBJeVsJtx/view?usp=drive_link)
 
 In a new terminal
 ```
