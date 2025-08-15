@@ -123,7 +123,7 @@ class MergeNode:
         
     def __del__(self):
         mean_hz = self.hz / self.cycles 
-        rospy.loginfo(f"Total merge_data execution: {mean_hz:.4f} hz")
+        #rospy.loginfo(f"Total merge_data execution: {mean_hz:.4f} hz")
 
         
     def sonar_callback(self, msg:OculusPing)->None:
@@ -173,7 +173,7 @@ class MergeNode:
             self.hz = hz + self.hz
             self.cycles = self.cycles + 1
             # Log the time it took to execute
-            rospy.loginfo(f"merge_data execution: {hz:.4f} hz")
+            # rospy.loginfo(f"merge_data execution: {hz:.4f} hz")
             self.header.stamp = stamp
             cloud_msg = pc2.create_cloud(self.header, self.laserFields, point_cloud)
             self.merge_cloud_pub.publish(cloud_msg)
