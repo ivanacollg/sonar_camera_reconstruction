@@ -3,7 +3,7 @@
 This repo contains the code derived from the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction.  
 [Paper (arXiv)](https://arxiv.org/abs/2508.03408)  
   
-If you are looking for a ROS2 version of this code it can be found [here](https://github.com/ivanacollg/sonar_camera_reconstruction/tree/ROS2).
+You are viewing the ROS 1 version of this code, if you are looking for a ROS2 version of this code it can be found [here](https://github.com/ivanacollg/sonar_camera_reconstruction/tree/ROS2).
 
 ![GIF](./utils/Readme.gif)
 
