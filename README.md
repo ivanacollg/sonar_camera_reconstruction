@@ -5,7 +5,7 @@ This repo contains the code derived from the paper "Opti-Acoustic Scene Reconstr
   
 If you are looking for a ROS2 version of this code it can be found [here](https://github.com/ivanacollg/sonar_camera_reconstruction/tree/ROS2).
 
-![GIF](sonar_camera_reconstruction/utils/Readme.gif)
+![GIF](./utils/Readme.gif)
 
 # Dependencies
 This codebase is ROS native and will require a ROS installation. It can be used without ROS, but will require some work.
