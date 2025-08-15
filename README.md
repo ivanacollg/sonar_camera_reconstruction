@@ -45,7 +45,7 @@ Presently, this codebase uses our sonar image system in Argonaut `https://github
 ```
     roslaunch sonar_camera_reconstruction merge.launch
 ```
-Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
+Download [ROS 1 sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
 ```
     rosbag play sample.bag --clock
 ```
