@@ -186,7 +186,7 @@ class MergeFunctions:
             #self.lp.disable()
             #self.lp.print_stats()
 
-            if scan_line.shape[1] > 0:
+            if scan_line.shape[1] > 0 and scan_line.shape[0] > 0:
                 # Apply DBSCAN
                 # Number of clusters (excluding noise if present)
                 num_clusters, cluster_labels = self.imaging_sonar.cluster_scanline(scan_line[:, 0:3])
@@ -359,7 +359,10 @@ class MergeFunctions:
                     else:
                         self.xyz_aggregated = xyz_cloud
             
-            np.save('aggregated_cloud.npy', self.xyz_aggregated)
-            return self.xyz_aggregated, depth_img_color, stamp, feature_image
+                np.save('aggregated_cloud.npy', self.xyz_aggregated)
+                return self.xyz_aggregated, depth_img_color, stamp, feature_image
+            else:
+                print("No relevant sonar points")
+                return np.zeros(0), np.zeros(0), np.zeros(0), np.zeros(0)
         else:
             return np.zeros(0), np.zeros(0), np.zeros(0), np.zeros(0)
