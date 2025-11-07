@@ -52,7 +52,7 @@ Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZK
 
 # Data sets
 
-This [dataset folder]([https://drive.google.com/drive/folders/1_zDJU3RG680yMyCnp7hTFCKx4DcZmYRF?usp=sharing](https://drive.google.com/drive/folders/1P7bbY_ikMIOyv38ZTB3Xp3M5JepqIdYG?usp=sharing)) constains all the data used for the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction ([Paper (arXiv)](https://arxiv.org/abs/2508.03408)). 
+This [dataset folder](https://drive.google.com/drive/folders/1P7bbY_ikMIOyv38ZTB3Xp3M5JepqIdYG?usp=sharing) constains all the data used for the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction ([Paper (arXiv)](https://arxiv.org/abs/2508.03408)). 
 
 Each folder contains data from each scenario shown in the paper: 
 - tank_piers
