@@ -1,8 +1,0 @@
-# Minimum size of area (# of pixels) in the image to be considered contact -> this removes noise
-min_area: 1000
-boundry: 300
-# Invert or not the threshold to look for dark or light areas in the image. Dark = True, Light = False
-threshold_inv: True
-# Fast performance mode
-# Code will run faster, it will be slightly less percise
-fast_performance: True

@@ -45,11 +45,39 @@ Presently, this codebase uses our sonar image system in Argonaut `https://github
 ```
     roslaunch sonar_camera_reconstruction merge.launch
 ```
-Download [ROS 1 sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
+Download [sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJesYIGAZKkg8h-aQo/view?usp=sharing)
 ```
     rosbag play sample.bag --clock
 ```
 
+# Data sets
+
+This [dataset folder](https://drive.google.com/drive/folders/1_zDJU3RG680yMyCnp7hTFCKx4DcZmYRF?usp=sharing) constains all the data used for the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction ([Paper (arXiv)](https://arxiv.org/abs/2508.03408)). 
+
+Each folder contains data from each scenario shown in the paper: 
+- tank_piers
+- tank_sea_wall
+- marina_pier
+- marina_sea_wall
+
+Additionally, tank scenarious include emulated turbidity examples types 5C, 7C, and 9C. STL files of ground truth structes are likewise included. 
+
+Each folder contains original ROS1 .bag data and converted data to ROS2 folder. 
+
+### Running code for different scenarious
+Different scenarious contain slightly different parameters for sonar range, monocular camera calibration, etc. 
+
+Change the `environment` argument in the `merge.launch file` to launch different parameters:
+- marina_pier (default)
+- marina_seawall
+- tank (for all tank tests)
+
+Example:
+```
+    roslaunch sonar_camera_reconstruction merge.launch environment:=tank
+```
+
+# Documentation
 ### Subscriber Topics:
 - #### Camera image topic:  
     - Default Name: /camera/image_raw/compressed
@@ -122,7 +150,7 @@ Download [ROS 1 sample data](https://drive.google.com/file/d/1WK9nXKLUET0hseZJes
 
 
 # Citations
-If you use this repo please cite the following work. 
+If you use this repo or any of the data provided please cite the following work:
 ```
 @misc{collado2025,
       title={Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments}, 
