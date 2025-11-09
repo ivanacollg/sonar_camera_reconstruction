@@ -6,20 +6,22 @@ This repo contains the code derived from the paper "Opti-Acoustic Scene Reconstr
 ![GIF](./utils/Readme.gif)
 
 
-# Dependencies
+# Installation
 This codebase is ROS2 native and will require a ROS2 installation. It can be used without ROS2, but will require some work.
 
     - ROS Jazzy
     - Python3
-    
-Dependencies:
+
+**Dependencies:**
+
+Ensure you are using a python virtual environment when running the following installs. 
 #### sonar_oculus dependencies
 ```
-pip install empy lark-parser catkin_pkg
+pip install  pyyaml empy lark-parser catkin_pkg
 ```
 #### sonar_camera_reconstruction_pkg dependencies
 ```
-pip install setuptools open3d pybind11 pyyaml transforms3d “numpy<2” "opencv-contrib-python<4.10.0.84"
+pip install setuptools open3d pybind11 pyyaml transforms3d "numpy<2" "opencv-contrib-python<4.10.0.84"
 ```
 #### ROS2 dependencies
 ```
@@ -51,6 +53,33 @@ In a new terminal
     ros2 bag play /path/to/ros2bag/converted --clock
 ```
 
+# Data sets
+
+This [dataset folder](https://drive.google.com/drive/folders/1P7bbY_ikMIOyv38ZTB3Xp3M5JepqIdYG?usp=sharing) constains all the data used for the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction ([Paper (arXiv)](https://arxiv.org/abs/2508.03408)). 
+
+Each folder contains data from each scenario shown in the paper: 
+- tank_piers
+- tank_sea_wall
+- marina_pier
+- marina_sea_wall
+
+Additionally, tank scenarious include emulated turbidity examples types 5C, 7C, and 9C. STL files of ground truth structes are likewise included. 
+
+Each folder contains original ROS1 .bag data and converted data to ROS2 folder. 
+
+### Running code for different scenarious
+Different scenarious contain slightly different parameters for sonar range, monocular camera calibration, etc. 
+
+Change the `environment` argument in the `merge.launch` file to launch different parameters:
+- marina_pier (default)
+- marina_seawall
+- tank (for all tank tests)
+
+Example:
+```
+    ros2 launch sonar_camera_reconstruction_pkg merge_launch.py environment:=tank
+```
+
 # User Guide
 ## Topics and Parameters
 ### Subscriber Topics:
@@ -75,8 +104,8 @@ In a new terminal
     - Default Name: /sonar_camera_reconstruction/cloud
     - Type: sensor_msgs/msg/PointCloud2
 
-### Parameter Files:
-#### Monocular Camera parameters
+## Parameter Files:
+### Monocular Camera parameters
 - image_width: width of the image in pixels
 - image_height: height of the image in pixels
 - camera_matrix/data:
@@ -105,7 +134,7 @@ In a new terminal
        0,   0,   0,  1,]
     </pre>
 
-#### Sonar parameters
+### Sonar parameters
 - sonarRange: The maximum detection range in meters
 - thresholdHorizontal: detection strength threshold for the horizontal sonars CFAR processing, higher thresholds remove both noise as well as weaker targets in favor of fewer, stronger targets 
 - verticalAperture: The vertical angular coverage in degrees
@@ -116,7 +145,7 @@ In a new terminal
 - CFAR/Pfa: false alarm rate
 - CFAR/rank: matrix rank
 
-#### Merge parameters
+### Merge parameters
 - min_area: minimum # of pixels in the image to be considered contact
 - threshold_inv: True, boolean to choose whether to invert the threshold to look for dark or light areas in the image (Dark = True, Light = False)
 - boundary: # of pixels in the boundary to not be included in the segmentation
