@@ -1,8 +1,6 @@
 <launch>
-    <arg name="rectification" default="true"/>
-    <arg name="sonar_viewer" default="true"/>
+    <arg name="environment" default="marina_pier"/>
     <arg name="rviz" default="true"/>
-    <arg name="plot" default="true"/>
     <param name="/use_sim_time" value="true"/>
 
     <node if="$(arg rviz)" type="rviz" name="rviz" pkg="rviz" args="-d $(find sonar_camera_reconstruction)/rviz/merge.rviz" />
@@ -27,9 +25,7 @@
         <param name="merge_cloud_pub" type="str" value="$(arg merge_cloud_topic)"/>
         <param name="feature_image_pub" type="str" value="$(arg feature_image_topic)"/>
 
-        <rosparam file="$(find sonar_camera_reconstruction)/config/monocular_camera_params.yaml"/>
-        <rosparam file="$(find sonar_camera_reconstruction)/config/sonar_params.yaml"/>
-        <rosparam file="$(find sonar_camera_reconstruction)/config/merge_params.yaml"/>
+        <rosparam file="$(find sonar_camera_reconstruction)/config/params_$(arg environment).yaml"/>
     </node>
 
 </launch>
