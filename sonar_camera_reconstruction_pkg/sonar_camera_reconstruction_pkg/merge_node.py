@@ -18,6 +18,7 @@ from sensor_msgs.msg import CompressedImage, PointCloud2, PointField
 import sensor_msgs_py.point_cloud2 as pc2
 from std_msgs.msg import Header
 from nav_msgs.msg import Odometry
+from message_filters import Subscriber, ApproximateTimeSynchronizer
 
 #Custom ROS Messages
 from sonar_oculus.msg import OculusPing
@@ -52,9 +53,18 @@ class MergeNode(Node):
         image_topic = self.get_parameter('img_topic').get_parameter_value().string_value
 
         # Subscriptions
-        self.sonar_sub = self.create_subscription(OculusPing, sonar_topic, self.sonar_callback, 1)
-        self.odom_sub = self.create_subscription(Odometry, odom_topic, self.odom_callback, 1)
-        self.image_sub = self.create_subscription(CompressedImage, image_topic, self.image_callback, 1)
+        #self.sonar_sub = self.create_subscription(OculusPing, sonar_topic, self.sonar_callback, 1)
+        #self.odom_sub = self.create_subscription(Odometry, odom_topic, self.odom_callback, 1)
+        #self.image_sub = self.create_subscription(CompressedImage, image_topic, self.image_callback, 1)
+        self.odom_sub = Subscriber(self, Odometry, odom_topic)
+        self.image_sub = Subscriber(self, CompressedImage, image_topic)
+        self.sonar_sub = Subscriber(self, OculusPing, sonar_topic)
+        self.ts = ApproximateTimeSynchronizer(
+            [self.odom_sub, self.image_sub, self.sonar_sub],
+            queue_size=1,
+            slop=0.09  # max allowed time difference in seconds
+        )
+        self.ts.registerCallback(self.synced_callback)
      
         # Publisher Parameters 
         self.declare_parameter('segmented_image_pub', '/sonar_camera_reconstruction/segmented_img/compressed'  )
@@ -167,6 +177,7 @@ class MergeNode(Node):
        mean_hz = self.hz / self.cycles 
        #self.get_logger().info(f"Total merge_data execution: {mean_hz:.4f} hz")
 
+    '''
     # called when the node recieves an OculusPing msg
     def sonar_callback(self, msg:OculusPing)->None:
         with self.lock:
@@ -183,6 +194,14 @@ class MergeNode(Node):
         if self.image is None or msg.data != self.last_image_data:
             self.image = self.bridge_instance.compressed_imgmsg_to_cv2(msg, "bgr8")
             self.last_image_data = msg.data  # Store last image data for comparison
+    '''
+    def synced_callback(self, odom_msg, image_msg, sonar_msg):
+        if self.image is None or image_msg.data != self.last_image_data:
+            self.image = self.bridge_instance.compressed_imgmsg_to_cv2(image_msg, "bgr8")
+            self.last_image_data = image_msg.data  # Store last image data for comparison
+        pose = odom_msg.pose.pose
+        self.latest_data = (self.image, pose, sonar_msg)
+        #self.process_data(image, pose, sonar_msg)
 
     def process_data(self):
         """
