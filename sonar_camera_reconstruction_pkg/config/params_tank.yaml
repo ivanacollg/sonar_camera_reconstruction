@@ -1,0 +1,100 @@
+/merge_node:
+  ros__parameters:
+    # Tank Params
+
+    # MERGE PARAMS ################################################################
+    # Minimum size of area (# of pixels) in the image to be considered contact -> this removes noise
+    min_area: 334
+    boundry: 50
+    # Invert or not the threshold to look for dark or light areas in the image. Dark = True, Light = False
+    threshold_inv: False
+    # Fast performance mode
+    # Code will run faster, it will be slightly less percise
+    fast_performance: True
+
+
+    # MONOCULAR IMAGE PARAMS ######################################################
+    image_width: 1920
+    image_height: 1080
+    camera_name: narrow_stereo
+    camera_matrix:
+      rows: 3
+      cols: 3
+      data: [1096.404968 ,    0.     ,  936.318685,
+                0.     , 1094.906739 ,  502.602195,
+                0.     ,    0.     ,    1.     ]
+    distortion_model: plumb_bob
+    distortion_coefficients:
+      rows: 1
+      cols: 5
+      data: [0.028292, -0.006851, -0.004749, -0.004993, 0.000000]
+    rectification_matrix:
+      rows: 3
+      cols: 3
+      data: [1., 0., 0.,
+            0., 1., 0.,
+            0., 0., 1.]
+    projection_matrix:
+      rows: 3
+      cols: 4
+      data: [1025.0364 ,    0.     ,  925.73027,    0.     ,
+                0.     , 1034.43093,  488.16203,    0.     ,
+                0.     ,    0.     ,    1.     ,    0.     ]
+
+    # Transformation Matrix Sonar to Camera
+    Ts_c:  [0.0,   -1.0,  0.0,  0.0,
+            0.0,    0.0, -1.0,  0.0,
+            1.0,    0.0,  0.0,  0.15,
+            0.0,    0.0,  0.0,  1.0 ]
+
+
+    # SONAR PARAMS ###################################################################
+    #define the sonar parameters
+    horizontalFOV: 130.0
+    transformation: -0.087
+    verticalAperture: 20.0
+    sonarRange: 3.0
+
+    #define which implmentation we want to match the features
+    #method: python # options are cpp or python
+
+    #do we want to see the feature images from CFAR? turn on to publish
+    #visFeatures: True
+
+    #define the matching paramters
+    uncertaintyMax: .97
+    patchSize: 6
+
+    #define CFAR for the horizontal sonar
+    # Real life
+    tcHorizontal: 40
+    gcHorizontal: 10
+    pfaHorizontal: .1
+    thresholdHorizontal: 65
+
+    # Constant false alarm rate (CFAR) params for feature extraction
+    CFAR:
+      Ntc: 40 # number of training cells
+      Ngc: 10 # number of guard cells
+      Pfa: 0.1 #false alarm rate
+      rank: 10 # matrix rank
+
+    # point cloud filtering params
+    filter:
+      threshold: 65 # the min CFAR response to be added to the point cloud
+      resolution: 0.1 # voxel downsampling res
+      radius: 1.0 # outlier rejection radius
+      min_points: 5 # outlier rejection min points
+      skip: 1 # how often to skip a point cloud, use 1
+
+    # the vis params
+    visualization:
+      coordinates: 'cartesian'
+      radius: 2
+      color: [0, 165, 255]
+
+    # Publish sonar feature image -> computationally expensive
+    sonar_features: True
+
+    # are we using compressed imagary
+    compressed_images: True
