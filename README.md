@@ -1,5 +1,10 @@
 # sonar_camera_reconstruction
 
+ **WARNING: ROS2 Beta Version**
+
+**The ROS 2 version of this repository is currently in beta and under active development.
+It may contain synchronization issues and other instabilities while ongoing improvements are made.**
+
 This repo contains the code derived from the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction.  
 [Paper (arXiv)](https://arxiv.org/abs/2508.03408)
 
