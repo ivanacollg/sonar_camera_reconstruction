@@ -152,9 +152,14 @@ Example:
 # Citations
 If you use this repo or any of the data provided please cite the following work:
 ```
-I. Collado-Gonzalez, J. McConnell, P. Szenher and B. Englot,
-"Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments,"
-2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Hangzhou, China, 2025,
-pp. 1282-1289, doi: 10.1109/IROS60139.2025.11247733.
-keywords: {Training;Visualization;Sonar;Turbidity;Object segmentation;Reconstruction algorithms;Sonar navigation;Real-time systems;Reproducibility of results;Image reconstruction},
+@INPROCEEDINGS{11247733,
+  author={Collado-Gonzalez, Ivana and McConnell, John and Szenher, Paul and Englot, Brendan},
+  booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1282-1289},
+  keywords={Training;Visualization;Sonar;Turbidity;Object segmentation;Reconstruction algorithms;Sonar navigation;Real-time systems;Reproducibility of results;Image reconstruction},
+  doi={10.1109/IROS60139.2025.11247733}}
 ```
