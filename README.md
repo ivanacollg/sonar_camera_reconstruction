@@ -1,7 +1,7 @@
 # sonar_camera_reconstruction
 
 
-This repo contains the code derived from the paper "Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025), which presents an imaging sonar and monocular camera merging system for scene reconstruction.  
+This repo contains the code derived from the paper **"Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments" (2025)**, which presents an imaging sonar and monocular camera merging system for scene reconstruction.  
 [Paper (arXiv)](https://arxiv.org/abs/2508.03408)
 
 You are viewing the ROS 2 version of this code, if you are looking for a ROS 1 version of this code it can be found [here](https://github.com/ivanacollg/sonar_camera_reconstruction).
@@ -158,13 +158,14 @@ Example:
 # Citations
 If you use this repo please cite the following work. 
 ```
-@misc{collado2025,
-      title={Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments}, 
-      author={Ivana Collado-Gonzalez and John McConnell and Paul Szenher and Brendan Englot},
-      year={2025},
-      eprint={2508.03408},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2508.03408}, 
-}
+@INPROCEEDINGS{11247733,
+  author={Collado-Gonzalez, Ivana and McConnell, John and Szenher, Paul and Englot, Brendan},
+  booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Opti-Acoustic Scene Reconstruction in Highly Turbid Underwater Environments}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1282-1289},
+  keywords={Training;Visualization;Sonar;Turbidity;Object segmentation;Reconstruction algorithms;Sonar navigation;Real-time systems;Reproducibility of results;Image reconstruction},
+  doi={10.1109/IROS60139.2025.11247733}}
 ```
