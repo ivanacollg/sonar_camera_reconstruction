@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sonar_oculus</name>
+  <version>0.0.0</version>
+  <description>The sonar_oculus package</description>
+
+  <maintainer email="icollado@stevens.edu">Collado</maintainer>
+
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>TODO</license>
+
+  <!-- Build system -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Message generation -->
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+  <!-- Messages used inside .msg files -->
+  <depend>std_msgs</depend>
+</package>

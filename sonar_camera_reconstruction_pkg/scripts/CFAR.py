@@ -2,7 +2,7 @@ import math
 import numpy as np
 from scipy.optimize import root
 
-from sonar_camera_reconstruction import cfar
+from sonar_camera_reconstruction_pkg import cfar
 
 class CFAR(object):
     """
