@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(sonar_camera_reconstruction)
+project(sonar_camera_reconstruction_pkg)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -31,3 +31,4 @@ pybind11_add_module(cfar src/${PROJECT_NAME}/cpp/cfar.cpp)
 set_target_properties(cfar PROPERTIES LIBRARY_OUTPUT_DIRECTORY
   ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION}
 )
+

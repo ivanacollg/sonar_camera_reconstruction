@@ -3,7 +3,7 @@
     <arg name="rviz" default="true"/>
     <param name="/use_sim_time" value="true"/>
 
-    <node if="$(arg rviz)" type="rviz" name="rviz" pkg="rviz" args="-d $(find sonar_camera_reconstruction)/rviz/merge.rviz" />
+    <node if="$(arg rviz)" type="rviz" name="rviz" pkg="rviz" args="-d $(find sonar_camera_reconstruction_pkg)/rviz/merge.rviz" />
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="world2baselink" args="0 0 0 0 0 0 map odom" />
 
@@ -15,7 +15,7 @@
     <arg name="merge_cloud_topic" default="/sonar_camera_reconstruction/cloud"/>
     <arg name="feature_image_topic" default="/sonar_camera_reconstruction/feature_img/compressed"/>
 
-    <node pkg="sonar_camera_reconstruction" name="merge_node" type="merge_node.py" output="screen">
+    <node pkg="sonar_camera_reconstruction_pkg" name="merge_node" type="merge_node.py" output="screen">
         <param name="publish_rate" type="int" value="5"/>
 
         <param name="sonar_sub" type="str" value="$(arg sonar_topic)"/>
@@ -25,7 +25,7 @@
         <param name="merge_cloud_pub" type="str" value="$(arg merge_cloud_topic)"/>
         <param name="feature_image_pub" type="str" value="$(arg feature_image_topic)"/>
 
-        <rosparam file="$(find sonar_camera_reconstruction)/config/params_$(arg environment).yaml"/>
+        <rosparam file="$(find sonar_camera_reconstruction_pkg)/config/params_$(arg environment).yaml"/>
     </node>
 
 </launch>
